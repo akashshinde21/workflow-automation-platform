@@ -1,0 +1,7 @@
+{
+  "name": "workflow-automation-platform",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {"dev": "concurrently \"npm run dev --workspace @workflow/api\" \"npm run dev --workspace @workflow/web\"", "build": "npm run build --workspaces", "typecheck": "npm run typecheck --workspaces"},
+  "devDependencies": {"concurrently": "^9.0.1", "typescript": "^5.6.3"}
+}

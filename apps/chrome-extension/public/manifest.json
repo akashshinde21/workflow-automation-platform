@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Workflow Studio",
+  "version": "0.1.0",
+  "description": "Visual workflow automation directly in your browser",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Workflow Studio"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  }
+}

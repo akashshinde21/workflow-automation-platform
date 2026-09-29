@@ -5,9 +5,19 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
-      input: { popup: 'popup.html', editor: 'editor.html' },
-      output: { entryFileNames: '[name].js', dir: 'dist' }
+      input: {
+        popup: 'popup.html',
+        editor: 'editor.html',
+        background: 'src/background.ts'
+      },
+      output: {
+        format: 'iife',
+        entryFileNames: '[name].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name][extname]'
+      }
     }
   },
   server: { port: 5174 }
